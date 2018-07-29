@@ -22,60 +22,61 @@ pipeline {
             sleep(1000)
           }
         }
-         stage('Build') {
+         stage('Build2') {
           steps {
             echo "CI Build..."  
             sleep(300)
           }
         }
-        stage('Test') {
+        stage('Test3') {
           steps {
             echo "CI Test..."  
             sleep(1000)
           }
         }
-         stage('Build') {
+         stage('Build4') {
           steps {
             echo "CI Build..."  
             sleep(300)
           }
         }
-        stage('Test') {
+        stage('Test11') {
           steps {
             echo "CI Test..."  
             sleep(1000)
           }
         }
-         stage('Build') {
+         stage('Build22') {
           steps {
             echo "CI Build..."  
             sleep(300)
           }
         }
-        stage('Test') {
+        stage('Test33') {
           steps {
             echo "CI Test..."  
             sleep(1000)
           }
         }
-         stage('Build') {
+        stage('Build5') {
           steps {
             echo "CI Build..."  
             sleep(300)
           }
         }
-        stage('Test') {
+        stage('Test6') {
           steps {
             echo "CI Test..."  
             sleep(1000)
           }
-        } stage('Build') {
+        } 
+        stage('Build7') {
           steps {
             echo "CI Build..."  
             sleep(300)
           }
         }
-        stage('Test') {
+        stage('Test8') {
           steps {
             echo "CI Test..."  
             sleep(1000)
