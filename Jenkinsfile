@@ -13,13 +13,13 @@ pipeline {
         stage('Build') {
           steps {
             echo "CI Build..."  
-            sleep(10000)
+            sleep(10)
           }
         }
         stage('Test') {
           steps {
             echo "CI Test..."  
-            sleep(1000)
+            sleep(10)
           }
         }
       }
