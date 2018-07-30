@@ -22,66 +22,6 @@ pipeline {
             sleep(1000)
           }
         }
-         stage('Build2') {
-          steps {
-            echo "CI Build..."  
-            sleep(300)
-          }
-        }
-        stage('Test3') {
-          steps {
-            echo "CI Test..."  
-            sleep(1000)
-          }
-        }
-         stage('Build4') {
-          steps {
-            echo "CI Build..."  
-            sleep(300)
-          }
-        }
-        stage('Test11') {
-          steps {
-            echo "CI Test..."  
-            sleep(1000)
-          }
-        }
-         stage('Build22') {
-          steps {
-            echo "CI Build..."  
-            sleep(300)
-          }
-        }
-        stage('Test33') {
-          steps {
-            echo "CI Test..."  
-            sleep(1000)
-          }
-        }
-        stage('Build5') {
-          steps {
-            echo "CI Build..."  
-            sleep(300)
-          }
-        }
-        stage('Test6') {
-          steps {
-            echo "CI Test..."  
-            sleep(1000)
-          }
-        } 
-        stage('Build7') {
-          steps {
-            echo "CI Build..."  
-            sleep(300)
-          }
-        }
-        stage('Test8') {
-          steps {
-            echo "CI Test..."  
-            sleep(1000)
-          }
-        }
       }
     }
   }
@@ -89,35 +29,17 @@ pipeline {
     // 成功
     success {
       echo "流水线执行成功!"
-      script {
-        if (GIT_BRANCH == "master") {
-          deploy.notificationSuccess(DEPLOYMENT, DINGDING_BOT, "上线啦！", RELEASE_BUILD)
-        } else {
-          deploy.notificationSuccess(DEPLOYMENT, DINGDING_BOT, "流水线完成了", RELEASE_BUILD)
-        }
-      }
+      // script {
+      //   if (GIT_BRANCH == "master") {
+      //     deploy.notificationSuccess(DEPLOYMENT, DINGDING_BOT, "上线啦！", RELEASE_BUILD)
+      //   } else {
+      //     deploy.notificationSuccess(DEPLOYMENT, DINGDING_BOT, "流水线完成了", RELEASE_BUILD)
+      //   }
+      // }
     }
     // 失败
     failure {
-    echo "流水线执行失败!"
-    // check the npm log
-    // fails lets check if it
-    script {
-      if (CURRENT_VERSION != null) {
-        if (GIT_BRANCH == "master") {
-          deploy.setupStaging()
-        } else {
-          deploy.setupInt()
-        }
-        deploy.rollbackDeployment(
-          NAMESPACE,
-          DEPLOYMENT,
-          CONTAINER,
-          CURRENT_VERSION,
-        )
-        deploy.notificationFailed(DEPLOYMENT, DINGDING_BOT, "流水线失败了", RELEASE_BUILD)
-        }
-      }
+      echo "流水线执行失败!"
     }
     // 取消的
     aborted {
