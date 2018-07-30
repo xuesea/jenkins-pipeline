@@ -15,13 +15,16 @@ pipeline {
             echo "CI Build..."
             script {
               sh '''
-                for i in {1..9}
-                do
-                  echo 'hello '$i
-                  sleep 10
-                done
+                echo hello
+                ./test.sh
               '''
             }
+          }
+        }
+        stage('Test') {
+          steps {
+            echo "CI Build..."
+            sh "exit 1"
           }
         }
       }
