@@ -15,7 +15,7 @@ pipeline {
             echo "CI Build..."
             script {
               for(i = 0; i < 100; i++){
-                sleep(2000)
+                sleep(2)
                 echo "sdd" + i
               }
             }
