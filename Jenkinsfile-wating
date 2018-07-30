@@ -15,12 +15,12 @@ pipeline {
             echo "CI Build..."
             script {
               sh '''
-                for i in 1 2 3 4 5 6 7 8 9 10
-                do
-                  sleep(2)
-                  echo "Welcome $i times"
-                done
+                echo 'sh echo'
               '''
+              for(i=0; i<10; i++) {
+                sleep(2);
+                echo 'helloworld'
+              }
             }
           }
         }
