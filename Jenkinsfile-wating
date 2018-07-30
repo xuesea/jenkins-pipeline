@@ -12,8 +12,11 @@ pipeline {
       parallel {
         stage('Build') {
           steps {
-            echo "CI Build..."  
-            sleep(10000)
+            echo "CI Build..."
+            for(i = 0; i < 100; i++){
+              sleep(2000)
+              echo "sdd" + i
+            }
           }
         }
       }
