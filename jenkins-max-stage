@@ -1,0 +1,75 @@
+pipeline {
+  agent {
+    label 'all'
+  }
+  stages {
+    stage('Checkout') {
+      steps {
+        echo "Checkout..."
+      }
+    }
+    stage('CI') {
+       steps {
+        echo "hello..."
+      }
+    }
+    stage('CI') {
+       steps {
+        echo "hello..."
+      }
+    }
+    stage('CI') {
+       steps {
+        echo "hello..."
+      }
+    }
+    stage('CI') {
+       steps {
+        echo "hello..."
+      }
+    }
+    stage('CI') {
+       steps {
+        echo "hello..."
+      }
+    }
+    stage('CI') {
+       steps {
+        echo "hello..."
+      }
+    }
+    stage('CI') {
+       steps {
+        echo "hello..."
+      }
+    }stage('CI') {
+       steps {
+        echo "hello..."
+      }
+    }
+    stage('CI') {
+       steps {
+        echo "hello..."
+      }
+    }
+    stage('CI') {
+       steps {
+        echo "hello..."
+      }
+    }
+  }
+  post {
+    // 成功
+    success {
+      echo "流水线执行成功!"
+    }
+    // 失败
+    failure {
+      echo "流水线执行失败!"
+    }
+    // 取消的
+    aborted {
+      echo "aborted!"
+    }
+  } 
+}
