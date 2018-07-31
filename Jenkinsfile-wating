@@ -16,7 +16,7 @@ pipeline {
             script {
               sh '''
                 echo hello
-                ./test.sh
+                ./sleep.sh
               '''
             }
           }
