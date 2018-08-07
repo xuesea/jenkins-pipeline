@@ -13,17 +13,11 @@ pipeline {
         stage('Build') {
           steps {
             echo "CI Build..."
-            script {
-              sh '''
-                echo hello
-                ./sleep.sh
-              '''
-            }
           }
         }
         stage('Test') {
           steps {
-            echo "CI Build..."
+            echo "CI Test..."
           }
         }
       }
