@@ -23,6 +23,27 @@ pipeline {
       }
     }
   }
+  stages('checkout-two') {
+    stage('Checkout') {
+      steps {
+        echo "Checkout..."
+      }
+    }
+    stage('CI') {
+      parallel {
+        stage('Build') {
+          steps {
+            echo "CI Build..."
+          }
+        }
+        stage('Test') {
+          steps {
+            echo "CI Test..."
+          }
+        }
+      }
+    }
+  }
   post {
     // 成功
     success {
