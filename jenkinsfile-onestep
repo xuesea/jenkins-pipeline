@@ -20,15 +20,18 @@ pipeline {
           }
         }
         stage('Test') {
-          stage('Build1') {
-            steps {
-              echo "CI First Build..."
-            }
-          }
+          stages {
           
-          stage('Build2') {
-            steps {
-              echo "CI First Build..."
+            stage('Build1') {
+              steps {
+                echo "CI First Build..."
+              }
+            }
+
+            stage('Build2') {
+              steps {
+                echo "CI First Build..."
+              }
             }
           }
         }
