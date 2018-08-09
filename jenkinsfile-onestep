@@ -13,11 +13,6 @@ pipeline {
       }
     }
     stage('CI') {
-      stage('Build') {
-        steps {
-          echo "CI First Build..."
-        }
-      }
       parallel {
         stage('Build') {
           steps {
@@ -25,8 +20,16 @@ pipeline {
           }
         }
         stage('Test') {
-          steps {
-            echo "CI Test..."
+          stage('Build1') {
+            steps {
+              echo "CI First Build..."
+            }
+          }
+          
+          stage('Build2') {
+            steps {
+              echo "CI First Build..."
+            }
           }
         }
       }
